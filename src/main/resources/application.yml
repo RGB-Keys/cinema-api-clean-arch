@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: cinema-api-db
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/cinema-api-db
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    show-sql: true
+  flyway:
+    url: jdbc:postgresql://localhost:5432/cinema-api-db
+    schemas: public
+    user: postgres
+    password: postgres
+    locations: classpath:/db/migration/ddl,db/migration/dml
